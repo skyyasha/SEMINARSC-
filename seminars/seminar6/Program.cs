@@ -49,20 +49,76 @@
 // Задача 2. ННапишите программу, которая проверяет на вход 3 числа и прроверяет, может ли существовать треугольник со сторонами такой
 // длины. самое важное знать правило, каждая сторона должна быть меньше суммы 2-х других сторон.
 
-bool CheckTriangle(int x, int y, int z)
+// bool CheckTriangle(int x, int y, int z)
+// {
+//    if (x < y + z && y < x + z && z < x + y)
+//    {
+//       return true;
+//    }
+//    return false;
+// }
+
+// Console.WriteLine("Input lenght of a");
+// int x = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Input lenght of b");
+// int y = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Input lenght of c");
+// int z = Convert.ToInt32(Console.ReadLine());
+
+// Console.WriteLine($"Does such triangle with sides {x} and {y} and {x} exist?");
+// Console.WriteLine($"{CheckTriangle(x, y ,z)}");
+
+
+// Задача 3. вывести N чисел Фибоначи 
+//  С рекурсией
+
+// int Fibonachi(int i)
+// {
+//    if (i == 1 || i == 2) return 1;
+//    else return Fibonachi(i - 1) + Fibonachi(i - 2);
+
+// }
+
+// Console.WriteLine("Input quantity numbers of Fibonachi:");
+// int size = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Input quantity numbers of start print:");
+// int start = Convert.ToInt32(Console.ReadLine());
+
+// Console.WriteLine(" ");
+// for (int i = start; i <= size; i++ )
+// {
+//    Console.WriteLine($"{i} -> {Fibonachi(i)}");
+// }
+
+
+ void ShowArray(int[] array, int start)
 {
-   if (x < y + z && y < x + z && z < x + y)
+   for (int i = start-1; i < array.Length; i++)
    {
-      return true;
+      System.Console.Write($"{array[i]}, ");
    }
-   return false;
 }
 
-Console.WriteLine("Input lenght of a");
-int x = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Input lenght of b");
-int y = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Input lenght of c");
-int z = Convert.ToInt32(Console.ReadLine());
+int[] Fibonachi(int size)
+{
+   int[] myArray = new int[size];
+   myArray[0] = 0;
+   myArray[1] = 1;
+   for (int i = 2; i < myArray.Length; i++)
+   {
+      myArray[i] = myArray[i - 1] + myArray[i - 2];
+   }
+   return myArray;
+}
 
-Console.WriteLine($" Triangle with sides {x} and {y} and {x} exist {CheckTriangle(x, y ,z)}");
+Console.WriteLine("Input size");
+int size = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Input start print number");
+int start = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Input lenght of a");
+// int a = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Input lenght of b");
+// int b = Convert.ToInt32(Console.ReadLine());
+
+int[] fibonachi = Fibonachi(size);
+ShowArray(fibonachi, start);

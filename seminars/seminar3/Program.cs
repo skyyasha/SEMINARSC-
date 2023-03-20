@@ -33,6 +33,5 @@ int[] numbers = CreateArray(size);
 System.Console.WriteLine(Print(numbers));
 
 //4.заполнение массива
-
 // задача2. Дан массив наполненный от 1 до N 
 // Сколько раз какое число встречается?
